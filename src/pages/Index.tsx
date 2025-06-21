@@ -1,13 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import { AuthProvider } from '../hooks/useAuth';
+import Layout from '../components/Layout';
+import Dashboard from '../components/Dashboard';
+import LeaveRequestForm from '../components/LeaveRequestForm';
+import RequestManagement from '../components/RequestManagement';
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState('dashboard');
+
+  const renderCurrentView = () => {
+    switch (currentView) {
+      case 'dashboard':
+        return <Dashboard />;
+      case 'request':
+        return <LeaveRequestForm />;
+      case 'manage':
+        return <RequestManagement />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <AuthProvider>
+      <Layout currentView={currentView} onViewChange={setCurrentView}>
+        {renderCurrentView()}
+      </Layout>
+    </AuthProvider>
   );
 };
 
