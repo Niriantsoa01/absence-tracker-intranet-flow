@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
-import { LeaveRequest, mockLeaveRequests } from '../data/mockData';
+import { LeaveRequest } from '../types';
+import { mockLeaveRequests } from '../data/mockData';
 
 export const useLeaveRequests = () => {
   const [requests, setRequests] = useState<LeaveRequest[]>(mockLeaveRequests);

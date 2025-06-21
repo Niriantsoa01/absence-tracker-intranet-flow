@@ -1,6 +1,8 @@
 
 import { User, LeaveRequest } from '../types';
 
+export { User, LeaveRequest };
+
 export const mockUsers: User[] = [
   {
     id: '1',
