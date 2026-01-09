@@ -1,7 +1,7 @@
 
 import type { User, LeaveRequest } from '../types';
 
-export type { User, LeaveRequest };
+//export type { User, LeaveRequest };
 
 export const mockUsers: User[] = [
   {
