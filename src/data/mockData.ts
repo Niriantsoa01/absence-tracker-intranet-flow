@@ -1,5 +1,5 @@
 
-import { User, LeaveRequest } from '../types';
+import type { User, LeaveRequest } from '../types';
 
 export { User, LeaveRequest };
 
