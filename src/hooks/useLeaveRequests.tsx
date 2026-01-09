@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { LeaveRequest } from '../types';
+import type { LeaveRequest } from '../types';
 import { mockLeaveRequests } from '../data/mockData';
 
 export const useLeaveRequests = () => {
